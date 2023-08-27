@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: DM_Serif_Display;
+  font-weight: normal;
+}
+
+h6,
+h7,
+h8,
+p {
+  font-family: Jost;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 8.5rem;
+}
+
+h2 {
+  font-size: 6.5rem;
+}
+
+h3 {
+  font-size: 5rem;
+}
+
+h4 {
+  font-size: 4rem;
+}
+
+h5 {
+  font-size: 2.5rem;
+}
+
+h6 {
+  font-size: 2.2rem;
+}
+
+h7 {
+  font-size: 2rem;
+}
+
+h8 {
+  font-size: 1.8rem;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #fff;
+}
+
+.container {
+  padding-left: calc(50% - 560px);
+  padding-right: calc(50% - 560px);
+}
+
+.menu {
+  padding-top: 53px;
+  padding-bottom: 57px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu__logo_link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.menu__logo_name {
+  color: #292f36;
+  line-height: 5rem;
+}
+
+.links-main {
+  display: flex;
+  flex-direction: row;
+  gap: 48px;
+}
+.links-main__link {
+  list-style-type: none;
+}
+.links-main__link h7 {
+  color: #292f36;
+}
+
+.banner__wrapper {
+  background-image: url("../img/Photo.png");
+  width: 1201px;
+  height: 758px;
+  border-radius: 70px;
+  display: flex;
+  align-items: center;
+}
+.banner__content {
+  width: 434px;
+  padding-left: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 18px;
+}
+.banner__title {
+  line-height: 1.25em;
+}
+.banner__text {
+  line-height: 1.5em;
+  letter-spacing: 0.22px;
+}
+.banner__button {
+  padding: 26px 48px;
+  border-radius: 18px;
+  background-color: #292f36;
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gallery {
+  padding-top: 96px;
+}
+.gallery__header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.gallery__title {
+  text-align: center;
+  color: #292f36;
+}
+.gallery__subtitle {
+  text-align: center;
+  color: #4d5053;
+  width: 737px;
+}
+.gallery__wrapper {
+  padding-top: 93px;
+  display: grid;
+  grid-template-columns: minmax(547px, max-content) repeat(auto-fill, 547px);
+  gap: 104px;
+}
+.gallery__item {
+  width: 547px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.gallery__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.gallery__icon {
+  width: 52px;
+  height: 52px;
+}

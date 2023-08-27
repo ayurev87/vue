@@ -1,0 +1,20 @@
+.logo {
+  d: path("M0 34.0003H13.4588V24.499C13.4588 22.4853 15.0898 20.8543 17.1035 20.8543C19.1172 20.8543 20.7482 22.4853 20.7482 24.499V34.0003H33.9975V0C15.2211 0 0 15.2211 0 34.0003Z");
+  fill: #cda274;
+}
+
+.rightarrow {
+  d: path("M2 8.43542L15.7232 8.29857M10.6182 1.91138L17.1412 8.43436L10.4868 15.0887");
+  stroke: #cda274;
+  stroke-width: 2;
+  stroke-linecap: square;
+  stroke-linejoin: round;
+}
+
+.right {
+  d: path("M32 44L40 35L32 26");
+  stroke: #292f36;
+  stroke-width: 2;
+  stroke-linecap: square;
+  stroke-linejoin: round;
+}
