@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 2</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+<!--    <button @click="clickForAccessYes()">Мне исполнилось 14 лет</button>-->
+<!--    <button @click="clickForAccessNo()">Мне еще нет 14 лет</button>-->
+<!--    <h3>{{ text }}</h3>-->
+<!--    <button @click="answer(true)">Мне исполнилось 14 лет</button>-->
+<!--    <button @click="answer(false)">Мне еще нет 14 лет</button>-->
+<!--    <h3 v-if="isAllowed">Мне исполнилось 14 лет</h3>-->
+<!--    <h3 v-else>Доступ закрыт</h3>-->
+<!--    <button @click="toggle">{{ isShown ? 'Скрыть' : 'Показать' }}</button>-->
+<!--    <div v-if="isShown">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis consequatur dolore dolorum eligendi explicabo id, laboriosam magnam maxime, necessitatibus nisi officiis optio quae quaerat quibusdam sequi tempore veritatis. Quia?</div>-->
+<!--    <div v-show="isShown">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis consequatur dolore dolorum eligendi explicabo id, laboriosam magnam maxime, necessitatibus nisi officiis optio quae quaerat quibusdam sequi tempore veritatis. Quia?</div>-->
+    <button @click="generateRandomNumber()">Генерировать случайное число</button>
+    <p>{{ randomNumber }}</p>
+    <p>{{ randomNumberText }}</p>
+    <p>{{ randomNumberTextMethod() }}</p>
+    <button @click="someCounter++">SomeBtn</button>
+    <p>{{ someCounter }}</p>
+</div>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            // text: '',
+            // isAllowed: false,
+            // isShown: false,
+            randomNumber: 0,
+            // randomNumberText: '',
+            someCounter: 0,
+        },
+        computed: {
+            randomNumberText() {
+                console.log('computed');
+                if (this.randomNumber < 5) {
+                    return 'Число < 5';
+
+                } else if (this.randomNumber >= 5 && this.randomNumber <= 9) {
+                    return 'Число от 5 до 9';
+                } else {
+                    return 'Число равно 10';
+                }
+            },
+        },
+        methods: {
+            randomNumberTextMethod() {
+                console.log('method');
+                if (this.randomNumber < 5) {
+                    return 'Число < 5';
+
+                } else if (this.randomNumber >= 5 && this.randomNumber <= 9) {
+                    return 'Число от 5 до 9';
+                } else {
+                    return 'Число равно 10';
+                }
+            },
+            generateRandomNumber() {
+                this.randomNumber = Math.round(Math.random() * 10);
+            },
+            // generateRandomNumber() {
+            //     this.randomNumber = Math.round(Math.random() * 10);
+            //
+            //     if (this.randomNumber < 5) {
+            //         this.randomNumberText = 'Число < 5';
+            //
+            //     } else if (this.randomNumber >= 5 && this.randomNumber <= 9) {
+            //         this.randomNumberText = 'Число от 5 до 9';
+            //     } else {
+            //         this.randomNumberText = 'Число равно 10';
+            //     }
+            // },
+            // toggle() {
+            //     this.isShown = !this.isShown;
+            // }
+            // answer(answer) {
+            //     this.isAllowed = answer;
+            //
+            //     // clickForAccessYes(){
+            //     //     this.text = "Мне исполнилось 14 лет";
+            //     // },
+            //     // clickForAccessNo(){
+            //     //     this.text = "Доступ закрыт";
+            //     // },
+            // },
+        },
+    })
+</script>
+</body>
+</html>

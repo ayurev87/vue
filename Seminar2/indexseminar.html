@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p>Товаров в коризне: {{ counter }}</p>
+      <button
+        v-for="button in buttons"
+        @click="onClick(button)"
+        :key="button.id"
+      >
+        {{ button.inCart ? 'Товар в корзине' : 'Купить' }}
+      </button>
+      <br />
+      <button @click="clickForAccessYes()">Мне исполнилось 14 лет</button>
+      <button @click="clickForAccessNo()">Мне еще нет 14 лет</button>
+      <h3>{{ text }}</h3>
+      <button @click="generateRandomNumber()">
+        Генерировать случайное число
+      </button>
+      <p>{{ randomNumber }}</p>
+      <p>{{ randomNumberText }}</p>
+      <p>{{ randomNumberTextMethod() }}</p>
+      <button @click="someCounter++">SomeBtn</button>
+      <p>{{ someCounter }}</p>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          text: '',
+          counter: 0,
+          buttons: [
+            { id: 1, inCart: false },
+            { id: 2, inCart: false },
+            { id: 3, inCart: false },
+            { id: 4, inCart: false }
+          ],
+          randomNumber: 0,
+          someCounter: 0
+        },
+        computed: {
+          randomNumberText() {
+            console.log('computed')
+            if (this.randomNumber < 5) {
+              return 'Число < 5'
+            } else if (this.randomNumber >= 5 && this.randomNumber <= 9) {
+              return 'Число от 5 до 9'
+            } else {
+              return 'Число равно 10'
+            }
+          }
+        },
+
+        methods: {
+          randomNumberTextMethod() {
+            console.log('method')
+            if (this.randomNumber < 5) {
+              return 'Число < 5'
+            } else if (this.randomNumber >= 5 && this.randomNumber <= 9) {
+              return 'Число от 5 до 9'
+            } else {
+              return 'Число равно 10'
+            }
+          },
+
+          generateRandomNumber() {
+            this.randomNumber = Math.round(Math.random() * 10)
+          },
+
+          onClick(button) {
+            if (!button.inCart) {
+              this.counter++
+              button.inCart = true
+            }
+
+            // if (!button.inCart) {
+            //   this.counter++
+            //   button.inCart = true
+            //   button.text = 'Товар в корзине'
+            // }
+          },
+          clickForAccessYes() {
+            this.text = 'Мне исполнилось 14 лет'
+          },
+          clickForAccessNo() {
+            this.text = 'Доступ закрыт'
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
