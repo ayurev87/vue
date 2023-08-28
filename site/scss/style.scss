@@ -56,7 +56,10 @@ a {
 body {
     background-color: #fff;
 }
-
+ul,
+li {
+    list-style-type: none;
+}
 .container {
     padding-left: $indent-desktop;
     padding-right: $indent-desktop;
@@ -87,7 +90,6 @@ body {
     flex-direction: row;
     gap: 48px;
     &__link {
-        list-style-type: none;
         h7 {
             color: $darkbluecolor;
         }
@@ -131,6 +133,7 @@ body {
 
 .gallery {
     padding-top: 96px;
+    padding-bottom: 96px;
     &__header {
         display: flex;
         align-items: center;
@@ -148,10 +151,21 @@ body {
     &__wrapper {
         padding-top: 93px;
         display: grid;
-        grid-template-columns:
-            minmax(547px, max-content)
-            repeat(auto-fill, 547px);
-        gap: 104px;
+        grid-template-columns: repeat(2, 547px);
+        column-gap: 104px;
+        row-gap: 56px;
+        .item1 img {
+            border-top-right-radius: $border-radius-angle;
+        }
+        .item2 img {
+            border-top-left-radius: $border-radius-angle;
+        }
+        .item3 img {
+            border-bottom-right-radius: $border-radius-angle;
+        }
+        .item4 img {
+            border-bottom-left-radius: $border-radius-angle;
+        }
     }
     &__item {
         width: 547px;
@@ -159,13 +173,141 @@ body {
         flex-direction: column;
         gap: 24px;
     }
+
     &__info {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
+        .title {
+            color: $darkbluecolor;
+        }
+        .subtitle {
+            color: $darkgraycolor;
+        }
     }
-    &__icon {
-        width: 52px;
-        height: 52px;
+}
+.our-digits {
+    background: $beigecolor;
+    padding-top: 151px;
+    padding-bottom: 151px;
+    &__elements {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+
+        // & div:not(:last-child)::after{
+        //     content: url(../img/Line.svg);
+        //     position: absolute;
+
+        // }
+    }
+}
+.element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__counter {
+        color: $goldcolor;
+    }
+    &__description {
+        color: $darkgraycolor;
+    }
+}
+.news {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 96px;
+    padding-bottom: 96px;
+    &__title,
+    &__description {
+        max-width: 811px;
+    }
+    &__title {
+        text-align: center;
+    }
+    &__description {
+        margin-bottom: 93px;
+        text-align: center;
+    }
+    &-place {
+        display: flex;
+        flex-direction: row;
+        gap: 27px;
+        & .news-place__element:nth-child(even) {
+            background: #f4f0ec;
+        }
+        &__element {
+            max-width: 380px;
+            border: 1px solid $graycolor;
+            display: flex;
+            flex-direction: column;
+            border-radius: 40px;
+            padding: 21px;
+        }
+    }
+}
+.single-news {
+    &__visual {
+        position: relative;
+        align-self: center;
+    }
+    &__img {
+        border-radius: 40px 40px 0px 0px;
+    }
+    &__button {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        padding: 15px 10px;
+        border: 1px solid transparent;
+        border-radius: 10px 10px 10px 0px;
+        background: #fff;
+    }
+    &__title {
+        max-width: 252px;
+    }
+    &__info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+.footer {
+    padding-bottom: 134px;
+    &__info {
+        display: grid;
+        grid-template-columns: 4fr 1fr 1fr 3fr;
+        gap: 101px;
+    }
+    &__brand-info {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        ul {
+            padding-top: 16px;
+        }
+    }
+    &__links,
+    &__links .links {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    &__link,
+    a {
+        color: $darkgraycolor;
+    }
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        h6,
+        a {
+            color: $darkgraycolor;
+        }
     }
 }
