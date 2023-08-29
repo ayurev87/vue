@@ -39,7 +39,7 @@
                         this.items.push(`Новый элемент списка ${++this.id}`);
                     },
                     removeItem(id){
-                        this.items.pop(id)
+                         this.items.splice(id,1);
                     }
                 },
 
