@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        .block {
+            width: 350px;
+            height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" @keyup.enter="send()">
+        <button @click="send()">Отправить</button>
+        <h2>Link elem</h2>
+        <a v-bind:href="linkHref">my new link</a>
+        <img v-bind:src="imgPhoto">
+        <!-- <div class="block" :style ="{backgroundColor: 'grey'}"></div> -->
+        <div class="block" :style="styleBlock">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, nihil.
+        </div>
+        <h2>Heading -v-model</h2>
+        <h2>{{ modelData }}</h2>
+        <input type="text" v-model="modelData">
+        <button @click="HeadingText()">click heading</button>
+        <h2>калькулятор</h2>
+        <input type="text" v-model="fristNum">
+        <input type="text" v-model="secondNum">
+        =
+        {{result}}
+        <div>
+            <button @click="plus">+</button>
+            <button  @click="result= fristNum - secondNum">-</button>
+            <button  @click="result= fristNum * secondNum">*</button>
+            <button  @click="result= fristNum / secondNum">/</button>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                fristNum: 0,
+                secondNum: 0,
+                result: 0,
+                modelData: '',
+                linkHref: "product.html",
+                imgPhoto: "photo.jpg",
+                styleBlock: {
+                    backgroundColor: 'green',
+                    color: 'red'
+                }
+            },
+            methods: {
+
+                HeadingText() {
+                    if (this.modelData === '') {
+                        this.modelData = 'заголовок для блока'
+                    } else {
+
+                    }
+                },
+                send() {
+                    console.log('Отправить данные внутри input');
+                },
+                plus(){
+                    this.result = Number(this.fristNum) + Number(this.secondNum);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
