@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <!--         <img :src="product.url" :alt="product.name" class="img" />
+        <h1>Название продукта: {{product.name}}</h1>
+        <p>Цена: {{product.price}}</p>
+        <p>
+            <button type="button" :disabled = "product.hasDiscount" @click="makeDiscount">Сделать скидку</button>
+        </p> -->
+            <!--             <h1>Задание 2</h1>
+            <div v-for="item in users" :key="users.id">
+                <h1>name {{item.name}}</h1>
+                <h2>age {{item.age}}</h2>
+            </div> -->
+            <!-- <h1>Задание 3</h1>
+            <ul>
+                <li v-for="(product, undex) in products" :key="index">
+                    <input type="number" v-model="product.quantity">
+                    <input type="checkbox" v-model="product.isBought">
+                    <span>{{product.name}}</span>
+                </li>
+            </ul> -->
+            <h1>Задание 4</h1>
+            <h3>Имя:</h3>
+            <input type="text" v-model="fristName" @keyup.enter="addContact()">
+            <h3>Фамилия:</h3>
+            <input type="text" v-model="secondName"  @keyup.enter="addContact()">
+            <h3>Email:</h3>
+            <input type="email" v-model="email" @keyup.enter="addContact()">
+            <button @click="addContact()">Добавить контакт</button>
+            <ul>
+                <li v-for="({fristname, secondname, email}, index) in contacts" :key="index">
+                    {{fristname}} {{secondname}} - {{email}}
+                </li>
+            </ul>
+            <script>
+            new Vue({
+                el: "#app",
+                data: {
+                    contacts: [],
+                    fristName: '',
+                    secondName: '',
+                    email: ''
+                    
+                },
+                methods: {
+                   addContact() {
+                    this.contacts.push({
+                        fristname: this.fristName,
+                        secondname: this.secondName,
+                        email: this.email
+                    });     
+                    this.fristName ='';
+                    this.secondName ='';
+                    this.email ='';
+                    },
+                },
+               /*  data: {
+                    product:{
+                        name: "Samsung Galaxy s23",
+                        price: 74499,
+                        url: "https://c.dns-shop.ru/thumb/st1/fit/320/250/25e33b3e11ec6e060a00e70f2a65a835/d724c257977ad0dea464f177f095470018e5c2f0f451402c7e5f984c4e56ebf6.jpg",
+                        hasDiscount: false
+                    }
+                },
+                methods: {
+                    makeDiscount(){
+                        if(!this.product.hasDiscount){
+                            //let random = parseInt(Math.random()*20);
+                            //this.product.price = this.product.price - this.product.price*random /100;
+                            this.product.price = Number((this.product.price*0.8).toFixed(2));
+                            this.product.hasDiscount = true;
+                            
+                        }
+                    }
+                } */
+       /*          data: 
+                {
+                    users: [
+                        {
+                            name: 'Huey',
+                            age: 15,
+                        },
+                        {
+                            name: 'Dewey',
+                            age: 15
+                        },
+                        {
+                            name: 'Lovie',
+                            age: 15,
+                        }
+                    ]
+                } */
+/*                 data: {
+                    products: [
+                        {name: "Молоко", quantity: 2, isBought: false},
+                        {name: "Хлеб", quantity: 1, isBought: true},
+                        {name: "Яблоко", quantity: 5, isBought: false},
+                        {name: "Мясо", quantity: 0, isBought: false}
+                    ]
+                    
+                } */
+            })
+            </script>
+        </div>
+    </body>
+</html>
