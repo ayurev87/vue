@@ -59,14 +59,16 @@
             <article v-for="article in data" :key="article.id" class="article">
                 <h2 class="article__title">{{article.title}}</h2>
                 <p class="article__text">{{article.text}}</p>
-                <button class="button" :class="">Like</button>
+                <button class="btn" @click="likeToggle=!likeToggle" :class="{like: likeToggle}">Like</button>
             </article>
         </div>
         <script>
         new Vue({
             el: "#app",
             data: {
+                likeToggle: false,
                 data: [
+                    
                     {
                         title:'title text',
                         text: 'description text info element'
