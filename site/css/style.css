@@ -74,8 +74,8 @@ li {
 }
 
 .container {
-  padding-left: calc(50% - 560px);
-  padding-right: calc(50% - 560px);
+  padding-left: calc(50% - 600px);
+  padding-right: calc(50% - 600px);
 }
 
 .menu {
@@ -240,8 +240,8 @@ li {
   text-align: center;
 }
 .news-place {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 27px;
 }
 .news-place .news-place__element:nth-child(even) {
