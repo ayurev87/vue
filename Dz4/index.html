@@ -5,5 +5,47 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
     </head>
-    <body></body>
+    <body>
+        <div id="app">
+            <ul>
+                <li v-for="product in products" :key="product.id">
+                    <p>Товар: {{product.name}}, Цена: {{product.price}}</p>
+                </li>
+            </ul>
+            <button @click="sortUp()">По возрастанию цены</button>
+            <button @click="sortDown()">По убыванию цены</button>
+            <button @click="noSort()">По умолчанию цены</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script>
+            new Vue ({
+                el: "#app",
+                data: {
+                    products:[
+                        {id: 1, price: 480, name: "Товар1"},
+                        {id: 2, price: 50, name: "Товар2"},
+                        {id: 3, price: 280, name: "Товар3"},
+                        {id: 4, price: 420, name: "Товар4"},
+                        {id: 5, price: 100, name: "Товар5"},
+                        {id: 6, price: 70, name: "Товар6"},
+                        {id: 7, price: 240, name: "Товар7"},
+                        {id: 8, price: 310, name: "Товар8"},
+                        {id: 9, price: 400, name: "Товар9"},
+                    ],
+
+                },
+                methods: {
+                    sortUp() {
+                        this.products.sort((a,b) => a.price - b.price)
+                    },
+                    sortDown() {
+                        this.products.sort((a,b) => b.price - a.price)
+                    },
+                    noSort() {
+                        this.products.sort((a,b) => a.id - b.id)
+                    },
+                },
+            })
+        </script>
+    </body>
 </html>
