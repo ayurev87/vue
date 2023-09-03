@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>blog</title>
+        <link rel="stylesheet" href="css/blog.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/svg.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="container menu">
+                <div class="menu__left">
+                    <a href="index.html" class="menu__logo_link">
+                        <svg width="34" height="34" viewBox="0 0 34 34">
+                            <path class="logo"></path>
+                        </svg>
+                        <h4 class="menu__logo_name">Interno</h4>
+                    </a>
+                </div>
+                <div class="menu__right">
+                    <nav class="menu_links">
+                        <ul class="links-main">
+                            <li class="links-main__link">
+                                <a href="#">
+                                    <h7 class="nav__text">Home</h7>
+                                </a>
+                            </li>
+                            <li class="links-main__link">
+                                <a href="#">
+                                    <h7 class="nav__text"> Project</h7>
+                                </a>
+                            </li>
+                            <li class="links-main__link">
+                                <a href="#">
+                                    <h7 class="nav__text"> Blog</h7>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <section class="top"></section>
+       
+    <section class="blog">
+        <div class="container">
+            <div>
+                <div id="blog-box" class="blog__wrapper"  >
+                    <div class="blog__left-box" >
+                        
+                        <blog-left :blogs="blogs" :tagbtn="tagbtn" v-if="!currentArticle.length" > </blog-left>
+                        <div v-for="(item, index) in currentArticle" :key="item.id" class="blog__item" >
+                            <h2 class="blog__title"> {{ item.title }} </h2>
+                            <p> {{item.text}}</p>
+                        </div> 
+                    </div>
+                    
+                    <div class="blog__right-box">
+                        <blog-btn :tagbtn="tagbtn" :blogs="blogs" @getarticle="getarticle"></blog-btn>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__info">
+                    <div class="menu__left footer__brand-info">
+                        <a href="index.html" class="menu__logo_link">
+                            <svg width="34" height="34" viewBox="0 0 34 34">
+                                <path class="logo"></path>
+                            </svg>
+                            <h4 class="menu__logo_name">Interno</h4>
+                        </a>
+                        <h6 class="brand-info__description">
+                            It is a long established fact that a reader will be distracted lookings.
+                        </h6>
+                        <ul class="brand-info__links links-main">
+                            <li class="social-link">
+                                <a href="#">
+                                    <svg
+                                        width="19"
+                                        height="16"
+                                        viewBox="0 0 19 16"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path class="twitter"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="social-link">
+                                <a href="#">
+                                    <svg
+                                        width="17"
+                                        height="16"
+                                        viewBox="0 0 17 16"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path class="in"/>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__links">
+                        <h5 class="links__title footer__title">Pages</h5>
+                        <ul class="links">
+                            <li class="footer__link">
+                                <a href="#">
+                                    <h6>Home</h6>
+                                </a>
+                            </li>
+                            <li class="footer__link">
+                                <a href="#">
+                                    <h6>Projects</h6>
+                                </a>
+                            </li>
+                            <li class="footer__link">
+                                <a href="#">
+                                    <h6>Blog</h6>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div></div>
+                    <div class="footer__contacts">
+                        <h5 class="footer__title">Contacts</h5>
+                        <h6 class="footer__address">
+                            55 East Birchwood Ave. Brooklyn, New York 11201
+                        </h6>
+                        <h6 class="footer__email">
+                            <a href="mailto:contact@interno.com">contact@interno.com</a>
+                        </h6>
+                        <h6 class="footer__tel">
+                            <a href="tel:+1234567890">(123) 456 - 7890</a>
+                        </h6>
+                    </div>
+                </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+            <script src="scripts/comp.js"></script>
+        </body>
+    </html>
