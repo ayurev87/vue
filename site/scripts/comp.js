@@ -8,7 +8,13 @@ Vue.component('blog-left', {
                     <div class="blog__articles-box">
                         <div v-for="item in blogs" :key="item.id" class="blog__item"  >
                             <h3 class="blog__title"> {{ item.title }} </h3>
-                            <p> {{item.text}}</p>
+                            <img class="blog__img" src="{{item.img}}">
+                            <div class="blog__subtitle">
+                            <h5 class="blog__data">{{item.date}}</h5>
+                            <h5 class="blog__path">Interior / Home / Decore </5>
+                            </div>
+                            <h6> {{item.text}}</h6>
+                            <div class="blog__quotes">
                         </div> 
                     </div>    
             `
