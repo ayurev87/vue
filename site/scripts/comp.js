@@ -5,18 +5,11 @@ Vue.component('blog-left', {
   },
 
   template: `
-                    <div class="blog__articles-box">
-                        <div v-for="item in blogs" :key="item.id" class="blog__item"  >
-                            <h3 class="blog__title"> {{ item.title }} </h3>
-                            <img class="blog__img" src="{{item.img}}">
-                            <div class="blog__subtitle">
-                            <h5 class="blog__data">{{item.date}}</h5>
-                            <h5 class="blog__path">Interior / Home / Decore </5>
-                            </div>
-                            <h6> {{item.text}}</h6>
-                            <div class="blog__quotes">
+                    
+                        <div  class="blog__item"  >
+                            <blog :item="blogs[0]"></blog>
                         </div> 
-                    </div>    
+                   
             `
 })
 Vue.component('blog-btn', {
@@ -36,13 +29,45 @@ Vue.component('blog-btn', {
     }
   }
 })
+Vue.component('blog', {
+  props: ['item'],
+  template: `
+                            <div>
+                            <h3 class="blog__title"> {{ item.title }} </h3>
+                            <img class="blog__img" :src="item.img">
+                            <div class="blog__under-images">
+                              <p class="blog__data">{{item.date}}</p>
+                              <p class="blog__path">Interior / Home / Decore </p>
+                            </div>
+                            <h6> {{item.text}}</h6>
+                            <div class="blog__quotes">
+                              <h2 class="blog__quotes-header">”</h2>
+                              <h5 class="blog__quotes-text"> {{item.quotes}}</h5>
+                            </div>
+                            <h3 class="blog__desigh_title">
+                              {{item.title_design}}</h3>
+                              <h6> {{item.text_design_start}}</h6>
+                              <ul><li v-for="element in item" :key="element.id" class="blog__list"> {{}}
+</div>
+  `,
+
+})
+Vue.component('select_blog', {
+  props: ['items'],
+
+  template: `
+   <div v-for="(item, index) in items" :key="item.id" class="blog__item" >
+    <blog :item="item"></blog>
+                                  </div> `,
+  
+});
 new Vue({
   el: '#blog-box',
   data: {
     blogs: [
       {
         tag: 'kitchen',
-        img: './img/kitchen1.png',
+        img: 'img/kitchen1.png',
         title: 'Lets Get Solution for Building Construction Work',
           text: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem ssing hidden in the middle of text. All tend to repeat predefined chunks as necessary.',
           date: '26 December,2022 ',
@@ -60,7 +85,7 @@ new Vue({
           },
            {
         tag: 'Bedroom',
-        img: './img/Bedroom1.jpg',
+        img: 'img/Bedroom1.jpg',
         title: 'Low Cost Latest Invented Interior Designing Ideas.',
           text: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem ssing hidden in the middle of text. All tend to repeat predefined chunks as necessary.',
           date: '26 December,2022 ',
@@ -133,10 +158,11 @@ new Vue({
 
     ],
     tagbtn: [{ title: 'Kitchen' }, { title: 'Bedroom' }, { title: 'Building' }, { title: 'Architecture' }, { title: 'Kitchen Planning' }],
-    curentIndex: 0,
+    currentIndex: 0,
     currentArticle: []
   },
   methods: {
+    
     getarticle (button) {
       this.currentArticle = this.blogs.filter(elem => elem.tag === button)
     }

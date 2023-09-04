@@ -52,10 +52,8 @@
                     <div class="blog__left-box" >
                         
                         <blog-left :blogs="blogs" :tagbtn="tagbtn" v-if="!currentArticle.length" > </blog-left>
-                        <div v-for="(item, index) in currentArticle" :key="item.id" class="blog__item" >
-                            <h2 class="blog__title"> {{ item.title }} </h2>
-                            <p> {{item.text}}</p>
-                        </div> 
+                        <select_blog :items="currentArticle"></select_blog>
+                  
                     </div>
                     
                     <div class="blog__right-box">
