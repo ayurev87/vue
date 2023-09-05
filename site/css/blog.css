@@ -154,6 +154,7 @@
   margin-top: 40px;
   display: flex;
   gap: 52px;
+  margin-bottom: 96px;
 }
 .blog__left-box {
   padding-right: 20px;
@@ -191,18 +192,35 @@
 .blog__quotes-text {
   margin-top: -147px;
 }
+.blog__lists {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 44px;
+}
+.blog__list {
+  display: flex;
+  flex-direction: row;
+}
+.blog__num {
+  color: #cda274;
+  margin-right: 14px;
+}
 .blog__btn-box {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 .blog__btn {
-  min-width: 140px;
-  height: 41px;
   background-color: #f4f0ec;
   text-align: center;
   padding: 9px 30px;
   border-radius: 10px;
+}
+.blog__btn:hover, .blog__btn:focus, .blog__btn:active {
+  background-color: #292f36;
+  color: #fff;
 }
 .blog__right-box {
   min-width: 300px;

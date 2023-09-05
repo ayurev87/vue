@@ -176,6 +176,7 @@
         margin-top: 40px;
         display: flex;
         gap: 52px;
+        margin-bottom: 96px;
     }
     &__left-box {
         padding-right: 20px;
@@ -213,18 +214,37 @@
             margin-top: -147px;
         }
     }
+    &__lists {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        margin-bottom: 44px;
+    }
+    &__list {
+        display: flex;
+        flex-direction: row;
+    }
+    &__num {
+        color: $goldcolor;
+        margin-right: 14px;
+    }
     &__btn-box {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
     }
     &__btn {
-        min-width: 140px;
-        height: 41px;
         background-color: #f4f0ec;
         text-align: center;
         padding: 9px 30px;
         border-radius: 10px;
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $darkbluecolor;
+            color: #fff;
+        }
     }
     &__right-box {
         min-width: 300px;

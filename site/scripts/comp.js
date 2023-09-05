@@ -47,7 +47,10 @@ Vue.component('blog', {
                             <h3 class="blog__desigh_title">
                               {{item.title_design}}</h3>
                               <h6> {{item.text_design_start}}</h6>
-                              <ul><li v-for="element in item" :key="element.id" class="blog__list"> {{}}
+                              <ul class="blog__lists"><li v-for="element in item.list" :key="element.id" class="blog__list"><h6 class="blog__num">{{element.id}}</h6> <h6>{{element.text}}</h6></li>
+                              </ul>
+                              <img class="blog__img" :src="item.img_design">
+                              <h6> {{item.text_design_end}}</h6>
 </div>
   `,
 
@@ -56,7 +59,7 @@ Vue.component('select_blog', {
   props: ['items'],
 
   template: `
-   <div v-for="(item, index) in items" :key="item.id" class="blog__item" >
+   <div v-for="item in items" :key="item.id" class="blog__item" >
     <blog :item="item"></blog>
                                   </div> `,
   
