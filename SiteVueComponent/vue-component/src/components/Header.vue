@@ -13,7 +13,7 @@
                     <nav class="menu_links">
                         <ul class="links-main">
                             <li class="links-main__link" v-for="menu in menus" :key="menu.id">
-                                <a href=menu.url>
+                                <a :href="menu.url">
                                     <h7 class="nav__text">{{menu.name}}</h7>
                                 </a>
                             </li>
@@ -27,25 +27,13 @@
 <script>
 export default {
     name: 'HeaderBlock',
+    props: ['menus'],
 
-    data() {
-        return {
-            menus: [{ url: '@/index.html', name: 'Home' }, { url: '', name: 'Project' }, { url: 'articles.html', name: 'Articles.html' }, { url: 'blog.html', name: 'Blog' }]
-            
-        };
-    },
 
-    mounted() {
-        
-    },
-
-    methods: {
-        
-    },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="sass" scoped>
 
 
 

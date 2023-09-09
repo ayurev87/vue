@@ -3,7 +3,7 @@
 }
 .articles {
     padding-top: 180px;
-    background-image: url(../img/block_bcgrnd.jpg);
+    background-image: url(@/assets/block_bcgrnd.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -162,7 +162,7 @@
     }
 }
 .top {
-    background-image: url(../img/block_banner.jpg);
+    background-image: url(@/assets/block_banner.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
