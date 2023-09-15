@@ -1,6 +1,4 @@
 @import "_vars";
-.top {
-}
 .articles {
     padding-top: 180px;
     background-image: url(@/assets/block_bcgrnd.jpg);
@@ -161,13 +159,7 @@
         }
     }
 }
-.top {
-    background-image: url(@/assets/block_banner.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 351px;
-}
+
 .blog {
     &__title {
         margin-bottom: 21px;

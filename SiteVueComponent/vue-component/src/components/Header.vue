@@ -13,9 +13,9 @@
                     <nav class="menu_links">
                         <ul class="links-main">
                             <li class="links-main__link" v-for="menu in menus" :key="menu.id">
-                                <a :href="menu.url">
+                                <div  @click="onSelectMenu(menu)">
                                     <h7 class="nav__text">{{menu.name}}</h7>
-                                </a>
+                                </div>
                             </li>
                         </ul>
                     </nav>
@@ -25,9 +25,17 @@
 </template>
 
 <script>
+
 export default {
     name: 'HeaderBlock',
     props: ['menus'],
+    emits: ['selectmenu'],
+    methods: {
+        onSelectMenu(name) {
+            const data = name;
+            this.$emit('selectMenu', data);
+        }
+    },
 
 
 };

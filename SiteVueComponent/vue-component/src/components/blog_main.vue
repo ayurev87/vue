@@ -1,5 +1,6 @@
 <template>
     <section class="blog">
+         <section class="top"></section>
         <div class="container">
             <div>
                 <div id="blog-box" class="blog__wrapper"  >
@@ -150,5 +151,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.top {
+    background-image: url(@/assets/block_banner.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 351px;
+}
 </style>
