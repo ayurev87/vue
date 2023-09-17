@@ -1,0 +1,30 @@
+@import "_vars";
+
+.project {
+    &__nav {
+        margin-top: 200px;
+        display: flex;
+        justify-content: center;
+        &_ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 96px;
+            border: 1px solid $goldcolor;
+            border-radius: 18px;
+            line-height: 125%;
+            letter-spacing: 0.36px;
+        }
+        &_li {
+            padding: 26px 0px;
+            color: $darkbluecolor;
+            &:first-child {
+                padding-left: 66px;
+            }
+            &:last-child {
+                padding-right: 66px;
+            }
+        }
+    }
+}

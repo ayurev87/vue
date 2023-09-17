@@ -41,9 +41,9 @@ export default {
   computed: {
     breadcrumb (){
       const data = this.menus.slice(0, 1);
-      data.push(this.menus.slice(this.select.id - 1, this.select.id));
+
       // data.push(this.menus.filter((object)=>object.name === this.select.name));
-      return data;
+      return data.concat(this.menus.slice(this.select.id - 1, this.select.id));
       
       // return data.push(this.menus.filter(this.selectMenu));
 

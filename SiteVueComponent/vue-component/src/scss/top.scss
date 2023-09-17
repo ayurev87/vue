@@ -1,0 +1,37 @@
+@import "_vars";
+.top {
+    background-image: url(@/assets/Banner_proejct.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 356px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    &__die {
+        bottom: 0;
+        padding: 41px 125px;
+        background-color: #fff;
+        border-top-left-radius: 37px;
+        border-top-right-radius: 37px;
+    }
+    &__breadcrumbs {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+    &__breadcrumb {
+        position: relative;
+    }
+    &__breadcrumb:not(:last-child):after {
+        content: "/";
+        font-size: 22px;
+        font-family: Jost;
+        position: absolute;
+        top: 0px;
+        right: -17px;
+    }
+}
