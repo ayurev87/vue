@@ -27,4 +27,11 @@
             }
         }
     }
+    &__categories {
+        padding-top: 61px;
+        display: grid;
+        grid-template-columns: repeat(autofit, 585px);
+        grid-auto-rows: auto;
+        gap: 24px;
+    }
 }

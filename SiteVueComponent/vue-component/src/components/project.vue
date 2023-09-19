@@ -19,6 +19,12 @@
                 </ul>
 
             </div>
+            <div class="project__categories" v-for="image in project_image" :key="image.id">
+                <div>
+                    <img :src="image:img"/>
+
+                </div>
+            </div>
 
 
         </div>
@@ -61,11 +67,14 @@ export default {
     },
 
     mounted() {
+
         
     },
 
     methods: {
-        
+        updateImage(){
+           
+        },  
     },
 };
 </script>
