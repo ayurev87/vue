@@ -19,9 +19,9 @@
                 </ul>
 
             </div>
-            <div class="project__categories" v-for="image in project_image" :key="image.id">
-                <div>
-                    <img :src="image:img"/>
+            <div class="project__categories" >
+                <div v-for="image in project_image" :key="image.id">
+                    <img class="project__image" :src="image.img"/>
 
                 </div>
             </div>
@@ -32,6 +32,14 @@
 </template>
 
 <script>
+import './js/masonry-docs.min.js'
+
+$(".grid").masonry({
+  itemSelector: ".grid-item",
+  columnWidth: 558,
+  horizontalOrder: true,
+});
+
 export default {
     name: 'Our_project',
     props: ['breadcrumb'],
@@ -80,5 +88,47 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.grid {
+  background: #EEE;
+  max-width: 1200px;
+  counter-reset: grid-item;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-item {
+  width: 600px;
+  height: 120px;
+  float: left;
+  background: #D26;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 5px;
+}
+
+.grid-item--width2 { width: 320px; }
+.grid-item--width3 { width: 480px; }
+.grid-item--width4 { width: 720px; }
+
+.grid-item--height2 { height: 200px; }
+.grid-item--height3 { height: 260px; }
+.grid-item--height4 { height: 360px; }
+
+.grid-item:before {
+  counter-increment: grid-item;
+  content: counter(grid-item);
+  display: block;
+  color: white;
+  padding-top: 0.2em;
+  text-align: center;
+  font-size: 1.4rem;
+}
 
 </style>
