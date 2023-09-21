@@ -29,9 +29,7 @@
     }
     &__categories {
         padding-top: 61px;
-        display: flow-root;
-        // display: flex;
-        // flex-wrap: wrap;
+        columns: 2;
         gap: 24px;
     }
     &__image {

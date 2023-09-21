@@ -32,13 +32,7 @@
 </template>
 
 <script>
-import './js/masonry-docs.min.js'
 
-$(".grid").masonry({
-  itemSelector: ".grid-item",
-  columnWidth: 558,
-  horizontalOrder: true,
-});
 
 export default {
     name: 'Our_project',
