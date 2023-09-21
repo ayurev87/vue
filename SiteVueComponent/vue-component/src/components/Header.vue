@@ -16,6 +16,7 @@
                                 <div  @click="onSelectMenu(menu)">
                                     <h7 class="nav__text">{{menu.name}}</h7>
                                 </div>
+                                
                             </li>
                         </ul>
                     </nav>

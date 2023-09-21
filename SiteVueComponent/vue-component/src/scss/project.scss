@@ -30,9 +30,34 @@
     &__categories {
         padding-top: 61px;
         columns: 2;
-        gap: 24px;
+        column-gap: 30px;
+        column-span: none;
     }
-    &__image {
-        width: 558px;
+    &__contnet {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        break-inside: avoid;
+        padding-bottom: 30px;
+    }
+    &__subimage {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    &__numbers {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding-bottom: 200px;
+    }
+    &__number {
+        border: 1px solid $goldcolor;
+        border-radius: 50%;
+        width: 52px;
+        height: 52px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
