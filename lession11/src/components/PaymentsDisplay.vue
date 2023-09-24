@@ -1,5 +1,6 @@
 <template>
     <div>
+        Сумма всех платежей{{ getFV }}
        <div v-for="item in items" :key="item.id">
         {{ item }}
        </div>
@@ -22,7 +23,11 @@ export default {
             
         };
     },
-
+    computed: {
+        getFV() {
+            return this.$store.getters.getFullPayment
+        }
+    },
  
 
     methods: {

@@ -1,14 +1,22 @@
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
 
 export default createStore({
   state: {
-  },
-  getters: {
+    paymentList: [],
   },
   mutations: {
+    SET_PAYMENT(state, payments) {
+      state.paymentList = payments;
+    },
+    ADD_PAYMENT(state, pay) {
+      state.paymentList.push(pay);
+    },
   },
-  actions: {
+  getters: {
+    getPayment: (state) => state.paymentList,
+    getFullPayment: (state) => {
+      return state.paymentList.reduce((a, b) => a + b.value, 0);
+    },
   },
-  modules: {
-  }
-})
+  actions: {},
+});

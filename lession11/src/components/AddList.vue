@@ -14,7 +14,7 @@ export default {
     data() {
         return {
             category: '',
-            value: '',
+            value: '' ,
             data: '',
             
         };
@@ -32,9 +32,11 @@ export default {
     methods: {
         onSave() {
             const data = {
-                value: this.value,
-                category: this.category,
                 date: this.data || this.getCurrentDate(),
+                
+                category: this.category,
+                value: Number(this.value),
+                
             }
             this.$emit('addNewPay', data);
         }
