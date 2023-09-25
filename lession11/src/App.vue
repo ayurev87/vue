@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations, mapState } from 'vuex';
+import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 import AddList from './components/AddList.vue';
 import PaymentsDisplay from './components/PaymentsDisplay.vue';
 
@@ -22,29 +22,29 @@ export default {
   data() {
     return {
       // paymentList: [],
-      infoText: 'new text info'
-    }
+      infoText: '',
+    };
   },
   methods: {
-    fetchData() {
-      return [
-        {
-          date: '28.03.2023',
-          category: 'Food',
-          value: 169,
-        },
-        {
-          date: '24.03.2023',
-          category: 'Transport',
-          value: 360,
-        },
-        {
-          date: '24.03.2023',
-          category: 'Food',
-          value: 532,
-        }
-      ]
-    },
+    // fetchData() {
+    //   return [
+    //     {
+    //       date: '28.03.2023',
+    //       category: 'Food',
+    //       value: 169,
+    //     },
+    //     {
+    //       date: '24.03.2023',
+    //       category: 'Transport',
+    //       value: 360,
+    //     },
+    //     {
+    //       date: '24.03.2023',
+    //       category: 'Food',
+    //       value: 532,z
+    //     }
+    //   ]
+    // },
     addNewPay(data) {
       // this.paymentList.push(data)
       this.ADD_PAYMENT(data)
@@ -55,10 +55,11 @@ export default {
   computed: {
     ...mapState(['paymentList']),
     ...mapGetters(['getPayment', 'getFullPayment']),
+    ...mapActions(['fetchData']),
   },
   created() {
     // this.paymentList = this.fetchData();
-    this.SET_PAYMENT(this.fetchData())
+    this.SET_PAYMENT(this.fetchData)
      
   }
 }

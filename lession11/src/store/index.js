@@ -18,5 +18,28 @@ export default createStore({
       return state.paymentList.reduce((a, b) => a + b.value, 0);
     },
   },
-  actions: {},
+  actions: {
+    fetchData({ commit }) {
+      setTimeout(() => {
+        const paymentsList = [
+          {
+            date: "28.03.2023",
+            category: "Food",
+            value: 169,
+          },
+          {
+            date: "24.03.2023",
+            category: "Transport",
+            value: 360,
+          },
+          {
+            date: "24.03.2023",
+            category: "Food",
+            value: 532,
+          },
+        ]
+        commit("SET_PAYMENT", paymentsList)
+      }, 1000);
+    }
+  }
 });
